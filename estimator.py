@@ -27,9 +27,5 @@ def estimator_2(endpoints, videos, cache_size, nb_caches):
                     if videos[most_viewed_video_id] + caches[best_cache] <= cache_size:
                         res[best_cache].append(most_viewed_video_id)
                         caches[best_cache] += videos[most_viewed_video_id]
+    res = {key: list(set(val)) for key, val in res.iteritems()}
     return res
-
-
-
-
-

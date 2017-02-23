@@ -1,9 +1,7 @@
 
 
-from estimator import estimator
+from estimator import estimator, estimator_2
 from write_output import write_output
-
-INPUT_FILEPATH = "/Users/mehdi/Documents/WorkingFolder/hashcode2017/kittens.in"
 
 def get_lines(input_filepath):
     with open(input_filepath) as infile:
@@ -38,10 +36,10 @@ def read_data(lines):
         endpoints[endpoint_id]["requests"][video_id] = requests_nb
         current_line += 1
 
-    return endpoints, videos
+    return endpoints, videos, cache_capacity, nb_caches
 
 for file in ["me_at_the_zoo.in", "trending_today.in", "videos_worth_spreading.in", "kittens.in"]:
-    INPUT_FILEPATH = "/Users/mehdi/Documents/WorkingFolder/hashcode2017/"+file
+    INPUT_FILEPATH = "/home/xavierm/Documents/hashcode_files/" + file
     lines = get_lines(INPUT_FILEPATH)
-    endpoints, videos = read_data(lines)
-    write_output(estimator(endpoints),INPUT_FILEPATH+".out" )
+    endpoints, videos, cache_capacity, nb_caches = read_data(lines)
+    write_output(estimator_2(endpoints, videos, cache_capacity, nb_caches),INPUT_FILEPATH+".estimator2.out" )
