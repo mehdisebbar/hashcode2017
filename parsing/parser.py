@@ -1,6 +1,6 @@
 
 
-INPUT_FILEPATH = "/home/xavierm/Documents/hashcode_files/stupid_af.in"
+INPUT_FILEPATH = "/Users/mehdi/Documents/WorkingFolder/hashcode2017/kittens.in"
 
 def get_lines(input_filepath):
     with open(input_filepath) as infile:
