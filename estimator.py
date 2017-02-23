@@ -8,6 +8,6 @@ def estimator(data):
             best_cache = min(data[endpoint_id]["caches"].iteritems(), key=operator.itemgetter(1))[0]
             temp_lst = res.get(best_cache,[])
             if most_viewed_video_id not in temp_lst:
-	            temp_lst.append(most_viewed_video_id)
+                temp_lst.append(most_viewed_video_id)
             res[best_cache]=temp_lst
     return res
