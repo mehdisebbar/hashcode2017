@@ -1,6 +1,5 @@
-
-
 INPUT_FILEPATH = "/home/xavierm/Documents/hashcode_files/stupid_af.in"
+
 
 def get_lines(input_filepath):
     with open(input_filepath) as infile:
