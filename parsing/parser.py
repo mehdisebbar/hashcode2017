@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 
 
 INPUT_FILEPATH = "/Users/mehdi/Documents/WorkingFolder/hashcode2017/kittens.in"
+=======
+INPUT_FILEPATH = "/home/xavierm/Documents/hashcode_files/stupid_af.in"
+>>>>>>> 908bf2b56c691ba8c0c88b49c6e3828dbc7eb91d
+
 
 def get_lines(input_filepath):
     with open(input_filepath) as infile:
