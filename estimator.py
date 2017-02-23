@@ -69,3 +69,18 @@ def estimator_4(endpoints, videos, cache_size, nb_caches):
 
 
 def estimator_5(endpoints, videos, cache_size, nb_caches):
+    res = {i: [] for i in range(nb_caches)}
+    caches = {i: 0 for i in range(nb_caches)}
+    all_requests = {}
+    for endpoint_id, endpoint_conf in endpoints.iteritems():
+        for video_id, nb_views in endpoint_conf["requests"].iteritems():
+            all_requests[(endpoint_id, video_id)] = nb_views
+    biggest_requests = Counter(all_requests).most_common()
+    for (endpoint_id, video_id), nb_views in biggest_requests:
+        best_caches = reversed(Counter(endpoints[endpoint_id]["caches"]).most_common())
+        for best_cache, _ in best_caches:
+            if videos[video_id] + caches[best_cache] <= cache_size:
+                res[best_cache].append(video_id)
+                caches[best_cache] += videos[video_id]
+    res = {key: list(set(val)) for key, val in res.iteritems()}
+    return res
