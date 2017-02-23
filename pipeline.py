@@ -1,6 +1,6 @@
 
 
-from estimator import estimator, estimator_2
+from estimator import estimator, estimator_2, estimator_3, estimator_4
 from write_output import write_output
 
 def get_lines(input_filepath):
@@ -42,4 +42,4 @@ for file in ["me_at_the_zoo.in", "trending_today.in", "videos_worth_spreading.in
     INPUT_FILEPATH = "/home/xavierm/Documents/hashcode_files/" + file
     lines = get_lines(INPUT_FILEPATH)
     endpoints, videos, cache_capacity, nb_caches = read_data(lines)
-    write_output(estimator_2(endpoints, videos, cache_capacity, nb_caches),INPUT_FILEPATH+".estimator2.out" )
+    write_output(estimator_4(endpoints, videos, cache_capacity, nb_caches),INPUT_FILEPATH+".estimator4.out" )
